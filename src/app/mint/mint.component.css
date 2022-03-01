@@ -1,0 +1,161 @@
+.header {
+  font-family: Montserrat;
+  font-size: 5rem;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header-img {
+  max-width: 20rem;
+}
+
+.instructions {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  max-width: 65rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5rem;
+  line-height: 150%;
+  color: var(--light-gray);
+}
+
+.form {
+  margin-top: 1.5rem;
+  background-color: var(--light-gray-3);
+  padding: 0.75rem 0.5rem;
+  border-radius: 2px;
+  filter: drop-shadow(0 0 0.5rem var(--light-gray));
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  background-color: var(--light-gray-2);
+  padding: 0.2rem 0.2rem;
+  border-radius: 2px;
+  color: var(--dark-gray);
+  display: flex;
+  align-items: center;
+  font-family: Inter;
+}
+
+.helper-text {
+  font-size: 1.1rem;
+  color: var(--gray);
+  padding: 0.4rem 0;
+}
+
+.info-emoji {
+  margin-left: 1rem;
+  filter: grayscale(100);
+  font-size: 0.9rem;
+  cursor: help;
+}
+
+input, textarea {
+  width: 90%;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  padding: 0.75rem 0.5rem;
+  font-size: 1.1rem;
+}
+
+input:focus, textarea:focus {
+  filter: drop-shadow(0 0 0.5rem var(--light-gray));
+}
+
+.attribute-item {
+  background-color: var(--light-gray-2);
+  margin-bottom: 1rem;
+}
+
+.preview-image-holder {
+  margin-top: 0.5rem;
+}
+
+.preview-image {
+  max-height: 20rem;
+  max-width: 100%;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+}
+
+.delete-attribute-button {
+  margin-top: 0.2rem;
+  background-color: var(--gray-1);
+  color: var(--light-gray-2);
+}
+.delete-attribute-button:hover {
+  color: white;
+}
+
+.add-attribute-button {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--light-gray);
+  background-color: var(--dark-gray);
+  border: 2px solid var(--gray-1);
+}
+.add-attribute-button:hover {
+  color: white;
+}
+
+.mint-button {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: var(--light-gray);
+  background-color: var(--dark-gray);
+  border: 2px solid var(--gray-1);
+  margin-top: 1rem;
+}
+.mint-button:hover {
+  color: white;
+}
+
+.load-holder {
+  display: flex;
+  align-items: center;
+  margin-top: 0.7rem;
+  margin-bottom: 0.3rem;
+}
+
+.loader {
+  display: inline-block;
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 2s linear infinite;
+}
+
+.loading-message-1 {
+  color: black;
+}
+.loading-message-2 {
+  color: white;
+}
+
+.mint-fee {
+  font-size: 1.3rem;
+  color: white;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media only screen and (max-width: 768px) {
+  .preview-image {
+    max-width: 90%;
+  }
+}

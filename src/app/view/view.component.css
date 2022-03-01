@@ -1,0 +1,226 @@
+button {
+  font-size: 1.1rem;
+  margin: 0.5rem 0.5rem;
+  color: var(--light-gray);
+  background-color: var(--dark-gray);
+  border: 2px solid var(--gray-1);
+  font-weight: bold;
+  border-radius: 6px;
+}
+button:hover {
+  border: 2px solid var(--gray-2);
+  color: white;
+  background-color: black;
+}
+
+
+.nft-image {
+  margin-top: 1.5rem;
+  max-height: 20rem;
+  width: 100%;
+  max-width: 20rem;
+  border: 2px solid var(--light-gray-2);
+  border-radius: 8px;
+}
+
+.description {
+  margin-top: 1.5rem;
+  padding: 1rem 1rem;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+  font-family: Inter;
+  color: white;
+  border: 2px solid var(--dark-gray);
+  border-radius: 8px;
+  line-height: 150%;
+}
+
+.attributes-title {
+  margin-top: 1rem;
+  padding: 1rem 1rem;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.attribute-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.attributes-list {
+  margin-top: 0rem;
+}
+
+.make-offer-title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.stats-title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.stats {
+  color: var(--light-gray-2);
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-item {
+  word-break: break-all;
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.2rem;
+}
+
+.external-link-holder {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;;
+}
+.external-link {
+  font-size: 0.9rem;
+  color: var(--light-gray-2);
+  background-color: var(--dark-gray);
+  border: 1px solid var(--gray);
+  font-weight: bold;
+  border-radius: 6px;
+}
+.external-link:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid var(--gray-1);
+}
+.external-link-icon {
+  width: 0.5rem;
+  height: auto;
+  color: white;
+}
+
+.clickable {
+  cursor: pointer;
+}
+.white-on-hover:hover {
+  color: black;
+  background-color: var(--light-gray-3);
+}
+
+.eth-offer-btn {
+  display: flex;
+  align-items: center;
+}
+
+.eth-logo {
+  width: 0.8rem;
+}
+
+.transfer-form {
+  font-size: 0.85rem;
+  width: 15rem;
+}
+
+.eth-input-holder {
+  margin: 1rem 1rem;
+  font-size: 1.2rem;
+}
+
+.eth-input-holder > input {
+  font-size: 1.2rem;
+}
+
+.nft-holder {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 60rem;
+  max-width: 100%;
+  align-items: center;
+}
+
+.modal {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  color: var(--light-gray-2);
+}
+
+.collection {
+  margin-top: 2rem;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--dark-gray);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+
+.collection-item-holder {
+  display: flex;
+}
+
+.collection-item {
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.collection-item-image {
+  height: 12rem;
+  width: auto;
+  margin: auto;
+}
+
+.selected {
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+}
+
+.swap-title {
+  margin-top: 2rem;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.swap-offer {
+  color: white;
+  padding: 1rem 1rem;
+}
+
+.swap-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.swap-id {
+  font-size: 1.1rem;
+}
+
+.swap-img {
+  max-width: 12rem;
+  max-height: 12rem;
+}
+
+.accept-btn {
+  margin-top: 0.5rem;
+}
+
+.balance {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;;
+}

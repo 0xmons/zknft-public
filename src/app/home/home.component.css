@@ -1,0 +1,146 @@
+.home {
+  background-color: black;
+  padding-bottom: 2rem;
+  max-width: 100%;
+  margin: auto;
+}
+
+.hero {
+  padding-top: 1rem;
+  max-width: 70rem;
+  margin: auto;
+}
+
+.tagline {
+  margin-left: 5rem;
+  line-height: 200%;
+  font-family: Inter;
+  font-size: 4rem;
+  color: white;
+}
+
+.smaller-tagline {
+  margin-top: 1.5rem;
+  line-height: 150%;
+  font-size: 1.5rem;
+  color: var(--light-gray);
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.main-img {
+  margin-top: -2rem;
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+}
+
+.get-started-holder {
+  margin-top: 0rem;
+}
+
+.get-started {
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  letter-spacing: 0.075em;
+  padding: .8em 1em;
+  text-transform: uppercase;
+  border: 3px var(--blue) solid;
+  /* border-image: linear-gradient(45deg, var(--light-teal) 0%, var(--dark-teal) 100%); */
+  border-image-slice: 1 1 1 1;
+  font-weight: bold;
+  background-color: var(--dark-gray);
+  color: var(--light-gray-2);;
+  border-radius: 4px;
+}
+
+.get-started:hover {
+  color: white;
+  background-color: black;
+}
+
+.tri-cols {
+  margin-top: -3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card {
+  border-radius: 20px;
+  padding: 1rem 1rem;
+  margin: 2rem 2rem;
+  text-align: center;
+  border: 2px solid var(--gray);
+}
+
+.card-text {
+  text-align: unset;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  color: var(--gray-2);
+  line-height: 160%;
+}
+
+.icon {
+  width: 16rem;
+  height: auto;
+}
+
+.mint {
+  background-color: var(--dark-gray);
+}
+
+.view {
+  background-color: var(--dark-gray);
+}
+
+.swap {
+  background-color: var(--dark-gray);
+}
+
+.card-title {
+  font-size: 3rem;
+  font-weight: bolder;
+  color: white;
+  font-family: Montserrat;
+  letter-spacing: 0.2rem;
+}
+
+@media only screen and (max-width: 1500px) {
+  .two-columnss {
+    grid-template-columns: 1fr 1fr;
+  }
+  .tri-cols {
+    margin-top: 0rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .tri-cols {
+    display: block;
+    margin-top: -1rem;
+  }
+  .main-img {
+    margin-top: -1rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .two-columns {
+    display: block;
+  }
+  .main-img {
+    margin: auto;
+    width: 75%;
+  }
+  .tagline {
+    margin-left: 1rem;
+  }
+  .card {
+    margin: 2rem;
+  }
+}
+

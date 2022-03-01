@@ -1,0 +1,27 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. 
+- NOTE: I changed target from es2015 to es5
+*/
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@angular/*": ["./node_modules/@angular/*"]
+    }
+  }
+}

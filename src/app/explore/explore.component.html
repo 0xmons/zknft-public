@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="header">
+    <div>Explore NFTs</div>
+    <div>
+      <img src="../assets/explore.svg" class="header-img">
+    </div>
+  </div>
+  <div class="instructions">
+    Enter in a specific NFT ID (e.g. 65536) for more information, or enter in an address (e.g. 0xdead169385a0d558f1009e73e8b81e9337a6cd85) to view all of their NFTs on zkSync.
+  </div>
+  <div class="search-bar">
+    <input type="text" class="search" placeholder="Enter ID or address" [(ngModel)]="query">
+    <button class="search-button grayscale" (click)="navigate()">🔍</button>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+<div class="container">
+
+  <div class="title name">{{nft.name}}</div>
+  
+  <div class="two-cols">
+    <div><img src="{{nft.image}}" class="nft-image"></div>
+    <div>
+      <div class="description">{{nft.description}}</div>
+      <div *ngIf="hasExternalLink" class="external-link-holder">
+        <a href="{{nft.external_url}}"><button class="external-link"><svg _ngcontent-hoa-c42="" class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -256 1850 1850"><path _ngcontent-hoa-c42="" d="M1438 819v320q0 119-84 203-85 85-204 85H318q-119 0-203-85-85-84-85-203V307q0-119 85-204 84-84 203-84h704q14 0 23 9t9 23v64q0 14-9 23t-23 9H318q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0 113-47t47-113V819q0-14 9-23t23-9h64q14 0 23 9t9 23zm384-864v512q0 26-19 45t-45 19q-26 0-45-19l-176-176-652 652q-10 10-23 10t-23-10L725 874q-10-10-10-23t10-23l652-652L1201 0q-19-19-19-45t19-45q19-19 45-19h512q26 0 45 19t19 45z" fill="currentColor"></path></svg>&nbsp; External Link</button></a>
+      </div>
+
+      <div *ngIf="hasAttributes">
+        <div class="attributes-title">Attributes</div>
+        <div class="description attributes-list">
+          <div class="attribute-item">
+            <div>Trait</div>
+            <div>Value</div>
+          </div>
+          <hr>
+          <div *ngFor="let n of nft.attributes" class="attribute-item">
+            <div>{{n.trait_type}}</div>
+            <div>{{n.value}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-bar" *ngIf="!isOwner && wallet.syncConnected">
+        <hr>
+        <div class="make-offer-title">Make Trade Offer</div>
+        <button (click)="openOfferModal()">Offer NFT</button>
+        <button (click)="openEthModal()" class="eth-offer-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 784 1277" class="eth-logo"><g fill-rule="nonzero"><path fill="#343434" d="M392 0l-8 29v845l8 8 392-231z"/><path fill="#8C8C8C" d="M392 0L0 651l392 231V472z"/><path fill="#3C3C3B" d="M392 957l-5 5v301l5 14 392-552z"/><path fill="#8C8C8C" d="M392 1277V957L0 725z"/><path fill="#141414" d="M392 882l392-231-392-179z"/><path fill="#393939" d="M0 651l392 231V472z"/></g></svg>
+          &nbsp; Offer ETH</button>
+      </div>
+
+      <div *ngIf="isOwner" class="transfer-holder clickable">
+        <button (click)="toggleShowTransfer()"><span class="grayscale">📬</span> Transfer NFT</button>
+        <div *ngIf="showTransfer">
+          <div>Address</div>
+          <input type="text" [(ngModel)]="recipientAddress" class="transfer-form" placeholder="0x75d4bdBf6593ed463e9625694272a0FF9a6D346F"><button (click)="transfer()" class="transfer-button">Transfer</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stats-title">NFT Information</div>
+    <div (click)="copy(nft.id)" class="clickable stat-item">ID: {{nft.id}}</div>
+    <div (click)="copy(nft.address)" class="clickable stat-item">Address: {{nft.address}}</div>
+    <div (click)="copy(nft.creatorAddress)" class="clickable stat-item">Creator: {{nft.creatorAddress}}</div>
+    <div (click)="copy(nft.contentHash)" class="clickable stat-item">Content Hash: {{nft.contentHash}}</div>
+  </div>
+
+  <div>
+    <hr>
+    <div class="swap-title">NFT Offers</div>
+    <div *ngFor="let o of nftSwapOffers" class="swap-offer">
+      <div class="swap-id"><a routerLink="/view/{{o.nftId}}">{{o.nftId}}</a></div>
+      <div class="swap-name">{{o.assetData.name}}</div>
+      <div><img class="swap-img" src="{{o.assetData.image}}"></div>
+      <div class="accept-btn" *ngIf="isOwner"><button (click)="acceptNft(o)">Accept Offer</button></div>
+    </div>
+  </div>
+
+  <div>
+    <hr>
+    <div class="swap-title">ETH Offers</div>
+    <div *ngFor="let o of ethSwapOffers" class="swap-offer">
+      <div class="swap-name">{{o.ethAmount}} ETH</div>
+      <div class="from">From: {{o.data.recipient}}</div> 
+      <div class="accept-btn" *ngIf="isOwner"><button (click)="acceptEth(o)">Accept</button></div>
+    </div>
+  </div>
+  
+</div>
+
+<div class="modal" *ngIf="showOfferModal">
+  <div class="collection">
+    <div class="right-aligned"><button (click)="closeOfferModal()">x</button></div>
+    <div class="modal-title">Select NFT To Offer</div>
+    <div>Note: the current offer system is not yet robust. <b>If you make another transaction on zkSync (e.g. mint/transfer/swap), this will invalidate your signed order, and you will need to make a new offer!</b></div>
+    <div class="collection-item-holder">
+      <div *ngFor="let n of ownedNftList" (click)="setSelectedNftId(n.id)" class="collection-item" [class.selected]="n.id === selectedNftId">
+        <div>{{n.id}}</div>
+        <div class="collection-item-name">{{n.name}}</div>
+        <div><img src="{{n.image}}" class="collection-item-image"></div>
+      </div>
+    </div>
+    <div class="centered"><button (click)="offerNft()">Select</button></div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="showEthModal">
+  <div class="collection">
+    <div class="right-aligned"><button (click)="closeEthModal()">x</button></div>
+    <div class="modal-title">Enter ETH To Offer</div>
+    <div>Note: the current offer system is not yet robust. <b>If you make another transaction on zkSync (e.g. mint/transfer/swap), this will invalidate your signed order, and you will need to make a new offer!</b></div>
+    <div class="centered eth-input-holder"><input type="text" placeholder="0.1" [(ngModel)]="offerEthAmount"> ETH</div>
+    <div class="centered balance">L2 Balance: {{l2EthBalance}} ETH</div>
+    <div class="centered"><button (click)="offerEth()">Confirm</button></div>
+  </div>
+</div>

@@ -1,0 +1,167 @@
+.header-wrapper {
+  background-image: linear-gradient(var(--dark-gray), black); 
+}
+
+.header {
+  padding: 1.5rem 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.logo-wrapper {
+  text-align: center;
+}
+
+.title-logo {
+  color: white;
+  font-weight: bolder;
+  font-size: 2rem;
+  font-family: Montserrat;
+  cursor: pointer;
+}
+
+.eth-balance {
+  color: var(--light-gray-2);
+  font-weight: bolder;
+  font-family: Inter;
+  font-size: 0.9rem;
+}
+
+.connect-button {
+  font-size: 1.1rem;
+  margin: 0.5rem 0.5rem;
+  color: var(--light-gray);
+  background-color: var(--dark-gray);
+  border: 2px solid var(--gray-1);
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.connect-button:hover {
+  border: 2px solid var(--gray-2);
+  color: white;
+  background-color: black;
+}
+
+.nav-menu {
+  margin-top: -4rem;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Montserrat;
+  line-height: 200%;
+  justify-content: center;
+}
+
+.menu-link {
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 1rem;
+  color: var(--gray-2);
+  cursor: pointer;
+  margin-left: 4rem;
+  font-weight: bolder;
+}
+.menu-link:first-of-type {
+  margin-left: 0rem;
+}
+
+.menu-link:hover {
+  color: var(--light-gray-3);
+}
+
+.menu-link:hover > .grayscale {
+  /* filter: sepia(1) saturate(100) hue-rotate(90deg) brightness(180%); */
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 11;
+}
+
+.card {
+  font-size: 1.2rem;
+  background-color: var(--gray);
+  padding: 2rem 2rem;
+  border-radius: 6px;
+  max-width: 40rem;
+  margin: auto;
+  filter: drop-shadow(0 0 0.5rem var(--gray));
+}
+
+.card-header {
+  text-align: center;
+  font-size: 2.8rem;
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: var(--light-gray);
+  line-height: 150%;
+  font-size: 1.8rem;
+}
+
+.card-text > a {
+  color: var(--light-teal);
+}
+
+.zkwallet-button {
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+.zkwallet-button:hover {
+  background-color: var(--dark-gray);
+}
+
+.eth-input {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.5rem;
+  font-size: 1.4rem;
+  width: 12rem;
+  padding: 1rem 1rem;
+  border-radius: 6px;
+  margin: 1rem 1rem;
+}
+
+.deposit-button {
+  font-size: 1.5rem;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 1324px) {
+  .nav-menu{
+    margin-top: -1rem;  
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    display: block;
+  }
+  .wallet-holder {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .eth-balance {
+    text-align: center;
+  }
+  .nav-menu {
+    margin-top: unset;
+    display: block;
+  }
+  .menu-link:first-of-type {
+    margin-left: 2rem;
+  }
+  .menu-link {
+    margin-left: 2rem;
+  }
+}

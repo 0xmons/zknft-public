@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: auto;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+.footer > div {
+  padding: 1rem 1rem;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.powered-tagline {
+  color: var(--light-gray);
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.zksync-logo {
+  padding-top: 0.5rem;
+  width: 5rem;
+  height: auto;
+}

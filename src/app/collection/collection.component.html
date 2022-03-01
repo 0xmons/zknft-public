@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="title">
+    <span title="{{address}}">
+      <angular-blockies [options]="blockiesOptions"></angular-blockies>
+    </span>'s NFTs
+  </div>
+</div>
+
+<div class="nft-holder">
+  <div *ngIf="noNFTs" class="no-NFTs">
+    No NFTs!
+  </div>
+  <div *ngFor="let n of nftList" routerLink="/view/{{n.id}}" class="nft-item">
+    <div class="nft-image"><img src="{{n.image}}" class="nft-image"></div>
+    <div>{{n.id}}</div>
+    <div class="nft-name">{{n.name}}</div>
+  </div>
+</div>
